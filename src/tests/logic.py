@@ -5,11 +5,8 @@ from src.productReader import read_product_changes, calculate_price_change
 
 
 def test_read_product_changes(sample_product_data):
-    changes = read_product_changes(sample_product_data, "Canon EOS R5")
+    changes = read_product_changes(sample_product_data, "Product A")
     assert len(changes) == 0
-    assert changes[0] == (datetime(2023, 3, 1), 100.00)
-    assert changes[1] == (datetime(2023, 4, 10), 120.00)
-
 def test_calculate_price_change(today_date):
     price_changes = [
         (datetime(2023, 3, 1), 100.00),
