@@ -29,14 +29,16 @@ def calculate_price_change(price_changes):
 
     return price_change
 
-filename = 'products'
-product_name = input("Введіть назву товару для перевірки цінових змін: ")
 
-product_changes = read_product_changes(filename, product_name)
+if __name__ == '__main__':
+    filename = 'products'
+    product_name = input("Введіть назву товару для перевірки цінових змін: ")
 
-if product_changes:
-    price_change = calculate_price_change(product_changes)
-    if price_change is not None:
-        print(f"Зміна ціни для товару '{product_name}' за останній місяць: {price_change:.2f}")
-else:
-    print(f"Дані про зміну ціни для товару '{product_name}' за останній місяць не знайдено.")
+    product_changes = read_product_changes(filename, product_name)
+
+    if product_changes:
+        price_change = calculate_price_change(product_changes)
+        if price_change is not None:
+            print(f"Зміна ціни для товару '{product_name}' за останній місяць: {price_change:.2f}")
+    else:
+        print(f"Дані про зміну ціни для товару '{product_name}' за останній місяць не знайдено.")
